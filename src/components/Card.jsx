@@ -18,18 +18,18 @@ function card({data,lon,lat,city,dataAvailable}) {
     var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     var d = new Date(dateiso);
     var dayName = days[d.getDay()];
-    console.log(datenow,dayName, dataAvailable)
+    // console.log(datenow,dayName, dataAvailable)
 
     return (  
-          <div class="bg-white my-3 xl:p-5 px-1 py-3 bg-opacity-80 rounded-3xl flex sm:flex-col flex-row justify-center space-x-6 items-center shadow-md">
+          <div className="bg-white my-3 xl:p-5 px-1 py-3 bg-opacity-80 rounded-3xl flex sm:flex-col flex-row justify-center space-x-6 items-center shadow-md">
             <div>
-              <p class="text-center text-gray-500 mt-2 text-sm hidden sm:block ">{(data)?data.weather[0].main:null}</p>
+              <p className="text-center text-gray-500 mt-2 text-sm hidden sm:block ">{(data)?data.weather[0].main:null}</p>
                 
                 
                 {
                   (data.weather[0].main === "Clear" || data.weather[0].main === "Clouds" ) &&
                   <>
-                    <svg class="h-32 w-32" viewBox="0 -32 512 512"  xmlns="http://www.w3.org/2000/svg"> 
+                    <svg className="h-32 w-32" viewBox="0 -32 512 512"  xmlns="http://www.w3.org/2000/svg"> 
                       
                       <path  d="m62.640625 137.230469c2.804687-46.371094 41.292969-83.113281 88.371094-83.113281 37.964843 0 70.347656 23.902343 82.929687 57.476562 32.695313.394531 59.082032 27.003906 59.082032 59.792969 0 33.035156-26.78125 59.816406-59.816407 59.816406-13.828125 0-154.71875 0-168.925781 0-25.960938 0-47.007812-21.046875-47.007812-47.007813 0-25.410156 20.167968-46.097656 45.367187-46.964843zm0 0" fill="#f0f5f7"/>
                       <path d="m293.023438 171.390625c0 23.898437-14.027344 44.53125-34.292969 54.105469 3.652343-7.738282 5.699219-16.390625 5.699219-25.519532 0-32.789062-26.382813-59.402343-59.078126-59.792968-12.585937-33.578125-44.964843-57.476563-82.933593-57.476563-17.121094 0-33.109375 4.859375-46.65625 13.28125 15.625-25.136719 43.480469-41.867187 75.25-41.867187 37.960937 0 70.347656 23.898437 82.925781 57.46875 32.699219.398437 59.085938 27.011718 59.085938 59.800781zm0 0" fill="#dde9ed"/>
@@ -72,28 +72,28 @@ function card({data,lon,lat,city,dataAvailable}) {
                 {
                   (data.weather[0].main === "Rain") &&
                   <>
-                  <img src={rain} class="h-32 w-32" alt="rainy"  />
+                  <img src={rain} className="h-32 w-32" alt="rainy"  />
                   </>
                 }
                 {
                   (data.weather[0].main === "Snow") &&
                   <>
-                  <img src={snow} class="h-32 w-32 p-2" alt="snow"  />
+                  <img src={snow} className="h-32 w-32 p-2" alt="snow"  />
                   </>
                 }
 
             </div>
             <div>
-              <p class="text-2xl font-bold text-right text-gray-900 p-2">{(data)?data.temp.min:null}°- {(data)?data.temp.max:null}°</p>
-              <p class="text-center text-gray-500 text-sm sm:hidden">{(data)?data.weather[0].main:null}</p>
-              <p class="text-right mr-6 text-gray-500 text-sm">Humidity - {(data)?data.humidity:null}% </p>
-              <p class="text-right mr-6 text-gray-500 text-sm">Longtitude - {(data)?lon:null}</p>
-              <p class="text-right mr-6 text-gray-500 text-sm">Latitude - {(data)?lat:null}</p>
-              <p class="text-right mr-6 text-gray-500 text-sm">City - {(data)?city:null}</p>
-              <p class="text-right mr-6 text-gray-500 text-sm">{(data)?datenow:null}</p>
+              <p className="text-2xl font-bold text-right text-gray-900 p-2">{(data)?data.temp.min:null}°- {(data)?data.temp.max:null}°</p>
+              <p className="text-center text-gray-500 text-sm sm:hidden">{(data)?data.weather[0].main:null}</p>
+              <p className="text-right mr-6 text-gray-500 text-sm">Humidity - {(data)?data.humidity:null}% </p>
+              <p className="text-right mr-6 text-gray-500 text-sm">Longtitude - {(data)?lon:null}</p>
+              <p className="text-right mr-6 text-gray-500 text-sm">Latitude - {(data)?lat:null}</p>
+              <p className="text-right mr-6 text-gray-500 text-sm">City - {(data)?city:null}</p>
+              <p className="text-right mr-6 text-gray-500 text-sm">{(data)?datenow:null}</p>
               {
                 (dataAvailable)?
-                <p class="text-right mr-6 text-gray-500 text-sm">
+                <p className="text-right mr-6 text-gray-500 text-sm">
                   <Link to={`/${city}/${dayName}`} >
                     Get Hourly Data
                   </Link> 
@@ -101,7 +101,7 @@ function card({data,lon,lat,city,dataAvailable}) {
 
               }
 
-              {/* <p class="text-gray-500 text-sm">{Manhattan, NY Weather}</p> */}
+              {/* <p className="text-gray-500 text-sm">{Manhattan, NY Weather}</p> */}
             </div>
           </div>
     )
