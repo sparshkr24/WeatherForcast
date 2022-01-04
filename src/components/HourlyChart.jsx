@@ -16,7 +16,7 @@ const HourlyChart = ()=> {
         FetchAPI(searchParams.city)
                 .then((response) => {
                 setData(response.hourly)
-                console.log("data",response.hourly);
+                // console.log("data",response.hourly);
                 })
                 .catch((error) => {
                 // console.log(" asdlkj") 
@@ -55,7 +55,7 @@ const HourlyChart = ()=> {
 
             // console.log("alksjdh",new Date(dateiso).getDay() ,dayName,hourRepresented )
             })
-            console.log(dataArr,date)
+            // console.log(dataArr,date)
             setDatasets(dataArr)
 
         }
