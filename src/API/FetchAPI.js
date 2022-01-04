@@ -1,7 +1,6 @@
 function getCityData(cityName){
-    let cityUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=4e8c836b9b43812298f8072d0f03b008`
+    let cityUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.APIKEY}`
     const cityData = fetch(cityUrl).then((response) => response.json()).catch((error) => console.log(error))
-    // console.log("Apikey",process.env.APIKEY)
     return cityData;
 }
 const FetchAPI = async(city) => {
