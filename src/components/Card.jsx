@@ -93,11 +93,11 @@ function card({data,lon,lat,city,dataAvailable}) {
               <p className="text-right mr-6 text-gray-500 text-sm">{(data)?datenow:null}</p>
               {
                 (dataAvailable)?
-                <p className="text-right mr-6 text-gray-500 text-sm">
-                  <Link to={`/${city}/${dayName}`} >
+                <Link to={`/${city}/${dayName}`} className='flex justify-center' >
+                <button className="mr-0 mt-2 active:translate-y-0.5 text-white bg-gradient-to-br from-yellow-600 to-pink-500 via-red-400 text-sm px-3 py-3 rounded-full text-center hover:opacity-90">
                     Get Hourly Data
-                  </Link> 
-                </p>:null
+                </button>
+                </Link>:null 
 
               }
 

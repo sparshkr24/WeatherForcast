@@ -2,6 +2,7 @@ import React from 'react'
 import {useState,useRef} from "react"
 import Card from '../components/Card'
 import FetchAPI from '../API/FetchAPI';
+import svg from "../images/weather.svg"
 
 function Home() {
     let [data ,setData ] = useState(false)
@@ -38,7 +39,30 @@ function Home() {
             
         </div>
         </form>
+        
+        <div className="px-5">
+        <div className="bg-white p-10 mt-8 bg-opacity-70 rounded-3xl flex flex-col justify-evenly items-center shadow-md w-fit mx-auto">
+            <div className="mb-8 font-medium sm:text-lg text-sm text-center text-red-800 hover:text-red-600" >Enter City Name to check weather forecast for next five days</div>
+            <img src={svg} alt="SVG as an image"/>
 
+        </div>
+        </div>
+        
+        {
+            (Loading && 
+                    <div className="bg-white md:px-20 md:py-32 py-20 px-10 mt-8 bg-opacity-50 rounded-3xl flex flex-col justify-evenly h-16 items-center shadow-md w-fit mx-auto">
+                        <div class="loader justify-center">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+            )
+        }
+        
+        
         <div className="p-3 h-full align-centre lg:flex sm:grid-cols-3 sm:gap-3 sm:grid items-center justify-evenly align-centre">
             {/* {data && <Card data={data.daily[0]} lon={data.lon} lat={data.lat} city={textinput.current.value} /> } */}
             {

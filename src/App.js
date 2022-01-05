@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import HourlyChart from "./components/HourlyChart";
 
 function App() {
+  console.log(process.env.APIKEY)
 
 
   return (
