@@ -1,9 +1,9 @@
-import { Routes, Route ,Link} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import HourlyChart from "./components/HourlyChart";
 
 function App() {
-  console.log(process.env.APIKEY)
+  // console.log(process.env.APIKEY)
 
 
   return (

@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { useParams ,Link} from "react-router-dom";
 import { useLocation } from "react-router-dom"
 import FetchAPI from '../API/FetchAPI';
-import { AreaChart, XAxis , YAxis, CartesianGrid , Tooltip ,Area } from 'recharts'
+import { AreaChart, XAxis , YAxis, CartesianGrid , Tooltip ,Area ,ResponsiveContainer } from 'recharts'
 
 
 const HourlyChart = ()=> {
@@ -66,7 +66,7 @@ const HourlyChart = ()=> {
         <div>
             <div className="">
                 <div className="flex justify-center mt-10 ">
-                    <div className="bg-white bg-opacity-80 rounded-3xl py-8 px-4">
+                    <div className="bg-white bg-opacity-80 rounded-3xl w-[80%] py-8 px-4">
                         {/* back Button */}
                         <div className="flex items-center md:flex">
                             <Link to="/" className="relative p-1 rounded-full text-white focus:outline-none hover:text-red-800 ">                             
@@ -76,7 +76,8 @@ const HourlyChart = ()=> {
                         <div className="flex justify-center pb-5 text-lg font-semibold text-red-500 hover:text-red-600">
                             {date}
                         </div>
-
+                        <ResponsiveContainer className="w-64" height="60%">
+   
                         <AreaChart width={730} height={250} className="h-10 w-10" data={datasets}
                         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                         <defs>
@@ -96,6 +97,8 @@ const HourlyChart = ()=> {
                         <Area type="monotone" dataKey="temp" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
                         {/* <Area type="monotone" dataKey="pv" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" /> */}
                         </AreaChart>
+                        
+                        </ResponsiveContainer>
                         <div className="flex justify-center pt-5 text-lg font-semibold text-red-500 hover:text-red-600">
                             Hourly temperature Chart
                         </div>

@@ -13,7 +13,7 @@ const FetchAPI = async(city) => {
     })
     .catch((error) => console.log(error))
 
-    // console.log("city",cityData,cityData.hasOwnProperty("message"));
+    // console.log("city",cityData);
     if(cityData.hasOwnProperty("message")){
         // means Entered City Does not Exits
         // console.log(Promise.reject(cityData)) 
