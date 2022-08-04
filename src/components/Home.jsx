@@ -101,7 +101,7 @@ function Home() {
                         if(index<=2){
                         dataAvailable = true;
                         }
-                        if(index>=5){
+                        if(index>=7){
                         return null
                         }
                         return (
